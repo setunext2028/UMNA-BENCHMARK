@@ -1,0 +1,594 @@
+{
+  "target": "gamma",
+  "methods": [
+    "UMNA",
+    "LoRA",
+    "Adapter",
+    "FullFT"
+  ],
+  "samples": 500,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "results": [
+    {
+      "seed": 42,
+      "target_delta": {
+        "UMNA": 0.32399999999999995,
+        "LoRA": 0.32599999999999996,
+        "Adapter": 0.32399999999999995,
+        "FullFT": 0.31400000000000006
+      },
+      "mean_abs_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.008399999999999986
+      },
+      "max_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.015999999999999903
+      },
+      "min_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": -0.015999999999999903
+      },
+      "interference": {
+        "UMNA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "LoRA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "Adapter": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "FullFT": {
+          "alpha": -0.015999999999999903,
+          "beta": -0.006000000000000005,
+          "delta": -0.0040000000000000036,
+          "epsilon": -0.014000000000000012,
+          "zeta": 0.0020000000000000018
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "target_delta": {
+        "UMNA": 0.32399999999999995,
+        "LoRA": 0.32599999999999996,
+        "Adapter": 0.32399999999999995,
+        "FullFT": 0.31400000000000006
+      },
+      "mean_abs_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.008399999999999986
+      },
+      "max_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.015999999999999903
+      },
+      "min_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": -0.015999999999999903
+      },
+      "interference": {
+        "UMNA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "LoRA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "Adapter": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "FullFT": {
+          "alpha": -0.015999999999999903,
+          "beta": -0.006000000000000005,
+          "delta": -0.0040000000000000036,
+          "epsilon": -0.014000000000000012,
+          "zeta": 0.0020000000000000018
+        }
+      }
+    },
+    {
+      "seed": 44,
+      "target_delta": {
+        "UMNA": 0.32399999999999995,
+        "LoRA": 0.32599999999999996,
+        "Adapter": 0.32399999999999995,
+        "FullFT": 0.31400000000000006
+      },
+      "mean_abs_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.008399999999999986
+      },
+      "max_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.015999999999999903
+      },
+      "min_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": -0.015999999999999903
+      },
+      "interference": {
+        "UMNA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "LoRA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "Adapter": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "FullFT": {
+          "alpha": -0.015999999999999903,
+          "beta": -0.006000000000000005,
+          "delta": -0.0040000000000000036,
+          "epsilon": -0.014000000000000012,
+          "zeta": 0.0020000000000000018
+        }
+      }
+    },
+    {
+      "seed": 45,
+      "target_delta": {
+        "UMNA": 0.32399999999999995,
+        "LoRA": 0.32599999999999996,
+        "Adapter": 0.32399999999999995,
+        "FullFT": 0.31400000000000006
+      },
+      "mean_abs_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.008399999999999986
+      },
+      "max_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.015999999999999903
+      },
+      "min_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": -0.015999999999999903
+      },
+      "interference": {
+        "UMNA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "LoRA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "Adapter": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "FullFT": {
+          "alpha": -0.015999999999999903,
+          "beta": -0.006000000000000005,
+          "delta": -0.0040000000000000036,
+          "epsilon": -0.014000000000000012,
+          "zeta": 0.0020000000000000018
+        }
+      }
+    },
+    {
+      "seed": 46,
+      "target_delta": {
+        "UMNA": 0.32399999999999995,
+        "LoRA": 0.32599999999999996,
+        "Adapter": 0.32399999999999995,
+        "FullFT": 0.31400000000000006
+      },
+      "mean_abs_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.008399999999999986
+      },
+      "max_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.015999999999999903
+      },
+      "min_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": -0.015999999999999903
+      },
+      "interference": {
+        "UMNA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "LoRA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "Adapter": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "FullFT": {
+          "alpha": -0.015999999999999903,
+          "beta": -0.006000000000000005,
+          "delta": -0.0040000000000000036,
+          "epsilon": -0.014000000000000012,
+          "zeta": 0.0020000000000000018
+        }
+      }
+    },
+    {
+      "seed": 47,
+      "target_delta": {
+        "UMNA": 0.32399999999999995,
+        "LoRA": 0.32599999999999996,
+        "Adapter": 0.32399999999999995,
+        "FullFT": 0.31400000000000006
+      },
+      "mean_abs_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.008399999999999986
+      },
+      "max_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.015999999999999903
+      },
+      "min_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": -0.015999999999999903
+      },
+      "interference": {
+        "UMNA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "LoRA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "Adapter": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "FullFT": {
+          "alpha": -0.015999999999999903,
+          "beta": -0.006000000000000005,
+          "delta": -0.0040000000000000036,
+          "epsilon": -0.014000000000000012,
+          "zeta": 0.0020000000000000018
+        }
+      }
+    },
+    {
+      "seed": 48,
+      "target_delta": {
+        "UMNA": 0.32399999999999995,
+        "LoRA": 0.32599999999999996,
+        "Adapter": 0.32399999999999995,
+        "FullFT": 0.31400000000000006
+      },
+      "mean_abs_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.008399999999999986
+      },
+      "max_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.015999999999999903
+      },
+      "min_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": -0.015999999999999903
+      },
+      "interference": {
+        "UMNA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "LoRA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "Adapter": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "FullFT": {
+          "alpha": -0.015999999999999903,
+          "beta": -0.006000000000000005,
+          "delta": -0.0040000000000000036,
+          "epsilon": -0.014000000000000012,
+          "zeta": 0.0020000000000000018
+        }
+      }
+    },
+    {
+      "seed": 49,
+      "target_delta": {
+        "UMNA": 0.32399999999999995,
+        "LoRA": 0.32599999999999996,
+        "Adapter": 0.32399999999999995,
+        "FullFT": 0.31400000000000006
+      },
+      "mean_abs_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.008399999999999986
+      },
+      "max_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.015999999999999903
+      },
+      "min_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": -0.015999999999999903
+      },
+      "interference": {
+        "UMNA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "LoRA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "Adapter": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "FullFT": {
+          "alpha": -0.015999999999999903,
+          "beta": -0.006000000000000005,
+          "delta": -0.0040000000000000036,
+          "epsilon": -0.014000000000000012,
+          "zeta": 0.0020000000000000018
+        }
+      }
+    },
+    {
+      "seed": 50,
+      "target_delta": {
+        "UMNA": 0.32399999999999995,
+        "LoRA": 0.32599999999999996,
+        "Adapter": 0.32399999999999995,
+        "FullFT": 0.31400000000000006
+      },
+      "mean_abs_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.008399999999999986
+      },
+      "max_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.015999999999999903
+      },
+      "min_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": -0.015999999999999903
+      },
+      "interference": {
+        "UMNA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "LoRA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "Adapter": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "FullFT": {
+          "alpha": -0.015999999999999903,
+          "beta": -0.006000000000000005,
+          "delta": -0.0040000000000000036,
+          "epsilon": -0.014000000000000012,
+          "zeta": 0.0020000000000000018
+        }
+      }
+    },
+    {
+      "seed": 51,
+      "target_delta": {
+        "UMNA": 0.32399999999999995,
+        "LoRA": 0.32599999999999996,
+        "Adapter": 0.32399999999999995,
+        "FullFT": 0.31400000000000006
+      },
+      "mean_abs_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.008399999999999986
+      },
+      "max_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": 0.015999999999999903
+      },
+      "min_interf": {
+        "UMNA": 0.0,
+        "LoRA": 0.0,
+        "Adapter": 0.0,
+        "FullFT": -0.015999999999999903
+      },
+      "interference": {
+        "UMNA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "LoRA": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "Adapter": {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "delta": 0.0,
+          "epsilon": 0.0,
+          "zeta": 0.0
+        },
+        "FullFT": {
+          "alpha": -0.015999999999999903,
+          "beta": -0.006000000000000005,
+          "delta": -0.0040000000000000036,
+          "epsilon": -0.014000000000000012,
+          "zeta": 0.0020000000000000018
+        }
+      }
+    }
+  ]
+}
