@@ -52,7 +52,7 @@ The central research hypothesis: **When new capabilities are added and routing i
 
 - Bridges (multi-wing fusion modules)
 - Second modality (image)
-- Rust control plane (S6+)
+- Rust control plane (S6+) — separate crate repo planned
 - Process/hardware fault isolation (F1/F2)
 - Core migration framework
 - Marketplace
@@ -64,14 +64,13 @@ The central research hypothesis: **When new capabilities are added and routing i
 
 ### Requirements
 - Python 3.11+
-- numpy, scipy, pyyaml
-- Rust 1.75+ (optional, for control plane crates)
+- numpy, scipy, pyyaml (see `requirements.txt`)
 
 ### Install
 ```bash
 git clone https://github.com/setunext2028/UMNA-BENCHMARK
 cd UMNA-BENCHMARK
-pip install -r requirements.txt  # if provided, else: pip install numpy scipy pyyaml
+pip install -r requirements.txt
 ```
 
 ### Run Tests
