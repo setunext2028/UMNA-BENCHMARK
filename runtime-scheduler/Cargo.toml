@@ -1,0 +1,19 @@
+[package]
+name = "runtime_scheduler"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+runtime_abi = { path = "../runtime-abi" }
+runtime_graph = { path = "../runtime-graph" }
+runtime_registry = { path = "../runtime-registry" }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+parking_lot = { workspace = true }
+dashmap = { workspace = true }
+sha2 = { workspace = true }
+numpy = { workspace = true }
+ndarray = { workspace = true }
+which = "4.0"
+fastrand = "2.0"

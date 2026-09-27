@@ -1,0 +1,18 @@
+[package]
+name = "runtime_core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+runtime_abi = { path = "../runtime-abi" }
+runtime_registry = { path = "../runtime-registry" }
+runtime_graph = { path = "../runtime-graph" }
+runtime_scheduler = { path = "../runtime-scheduler" }
+runtime_replay = { path = "../runtime-replay" }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+serde_yaml = "0.9"
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+parking_lot = { workspace = true }
+uuid = { workspace = true, features = ["v4", "serde"] }

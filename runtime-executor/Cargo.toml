@@ -1,0 +1,25 @@
+[package]
+name = "runtime_executor"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "wing-executor"
+path = "src/main.rs"
+
+[features]
+default = []
+cuda = ["dep:cuda"]
+ash = ["dep:ash"]
+vulkan = ["dep:ash"]
+
+[dependencies]
+runtime_abi = { path = "../runtime-abi" }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+
+# GPU/Hardware acceleration dependencies (optional features)
+cuda = { package = "cuda", version = "=0.4.0-pre.2", optional = true }
+ash = { version = "0.37", optional = true }

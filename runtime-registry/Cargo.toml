@@ -1,0 +1,18 @@
+[package]
+name = "runtime_registry"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+runtime_abi = { path = "../runtime-abi" }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+serde_yaml = "0.9"
+thiserror = { workspace = true }
+uuid = { workspace = true, features = ["v4", "serde"] }
+chrono = { workspace = true, features = ["serde"] }
+dashmap = { workspace = true }
+parking_lot = { workspace = true }
+anyhow = { workspace = true }
+regex = "1.0"
+once_cell = "1.0"

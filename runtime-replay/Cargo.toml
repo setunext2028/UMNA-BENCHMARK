@@ -1,0 +1,14 @@
+[package]
+name = "runtime_replay"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+runtime_abi = { path = "../runtime-abi" }
+runtime_graph = { path = "../runtime-graph" }
+runtime_registry = { path = "../runtime-registry" }
+runtime_scheduler = { path = "../runtime-scheduler" }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+sha2 = { workspace = true }

@@ -1,0 +1,12 @@
+[package]
+name = "runtime_graph"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+runtime_abi = { path = "../runtime-abi" }
+runtime_registry = { path = "../runtime-registry" }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+sha2 = { workspace = true }
