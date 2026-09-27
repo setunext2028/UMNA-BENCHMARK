@@ -1,0 +1,66 @@
+Downgrade / rollback operations
+===============================
+
+   +---------------------------------------+
+   | trigger:                              |
+   |  - origin drift P(t) - P(0) < -E      |
+   |  - measured behavior diverges from    |
+   |    admission profile (drift alarm)    |
+   |  - route regression on a protected    |
+   |    task                              |
+   |  - deliberate rollback decision       |
+   +---------------------------------------+
+                     |
+                     v
+   +---------------------------------------+
+   | 1 version resolve: select the LAST    |
+   |   pinned graph for this task family   |
+   |   (registry keeps every pinned route) |
+   +---------------------------------------+
+                     |
+                     v
+   +---------------------------------------+
+   | 2 restore artifacts: manifest of the  |
+   |   prior route names the exact Wing    |
+   |   versions; bytes content-addressed   |
+   |   by artifact_hash, kept out of git   |
+   +---------------------------------------+
+                     |
+                     v
+   +---------------------------------------+
+   | 3 re-admit: the restored graph must   |
+   |   belong to a CALIBRATION CLASS with  |
+   |   a valid calibrator; if the class    |
+   |   lapsed, shadow-only until re-fitted |
+   +---------------------------------------+
+                     |
+                     v
+   +---------------------------------------+
+   | 4 restore the origin baseline?        |
+   |   NO - the origin baseline is         |
+   |   PERMANENTLY pinned, never restored  |
+   |   by promotion or rollback. That      |
+   |   immutability is what makes cumula-  |
+   |   tive drift DETECTABLE.              |
+   +---------------------------------------+
+                     |
+                     v
+   +---------------------------------------+
+   | 5 demote the failing Wing version:    |
+   |   it leaves routing eligibility and   |
+   |   is flagged; it may return only      |
+   |   through re-evaluation               |
+   +---------------------------------------+
+                     |
+                     v
+   +---------------------------------------+
+   | 6 record the rollback in the audit    |
+   |   log with the promotion interference |
+   |   matrix entry (behavior was allowed  |
+   |   to change: I is meaningful)         |
+   +---------------------------------------+
+
+Rules: one deployment epoch = one Core major version. A rollback across
+epochs is NOT a rollback - it is a MIGRATION (retrain, revalidate,
+recalibrate, regenerate benchmarks, new deployment epoch). Git stays
+local; the owner commits; you stage and propose.

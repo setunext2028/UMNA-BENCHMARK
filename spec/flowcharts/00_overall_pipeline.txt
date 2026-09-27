@@ -1,0 +1,70 @@
+UMNA overall pipeline (from paper Appendix A, condensed)
+================================================================
+
+                     +-----------------+
+                     |   INPUT x       |
+                     |  (in Domain_e)  |
+                     +--------+--------+
+                              |
+                              v
+                     +-----------------+
+                     | type analysis   |
+                     +--------+--------+
+                              |
+                              v
+                     +-----------------+
+                     | stage-1 retrieval (N -> m candidates)
+                     +--------+--------+
+                              |
+                              v
+                     +-----------------+
+                     | stage-2 intake  |
+                     | host-measured   |
+                     | attributes only |
+                     +--------+--------+
+                              |
+             +----------------+----------------+
+             |                |                |
+             v                v                v
+   +----------------+  +----------------+  +---------------+
+   | protected live |  | NICE-R shadow  |  | plan S*       |
+   | route exists?  |  | (prob. s)      |  | (modes A/B/C) |
+   +----------------+  +----------------+  +-------+-------+
+         |                                         |
+         v                                         v
+   serve pinned                +-----------------------+
+   output only                 | CALIBRATION-CLASS     |
+                               | ADMISSION  (the gate) |
+                               +-----------+-----------+
+                                           |
+                        +------------------+------------------+
+                        |                  |                  |
+                        v                  v                  v
+              +----------------+   +---------------+
+              | PRODUCTION     |   | SHADOW_ONLY   |
+              | execute + fuse |   | execute+log   |
+              +--------+-------+   | never serve   |
+                       |           +---------------+
+                       v
+              +-----------------+
+              | binding risk    |
+              | control         |
+              +---+---------+---+
+                  |         |
+        pass       |         | fail
+        |          |         |
+        v          |         +-------------+
+   +---------+     |         |  budget?    |
+   | OUTPUT  |     |         +---+-----+---+
+   +---------+     |             |     |
+                   |       yes   |     | no
+                   |       v     |     v
+                   |  +--------+ |  +--------+
+                   |  | EXPAND | |  | ABSTAIN |
+                   |  +---+----+ |  +--------+
+                   |      |
+                   |      v
+                   |  re-ADMIT (grown graph = new binding)
+
+Invariants: plan -> admit -> execute.  expand -> admit, never execute.
+Every non-accept terminal is ABSTAIN.

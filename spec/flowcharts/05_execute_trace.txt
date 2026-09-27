@@ -1,0 +1,52 @@
+Execute and trace (S2)
+======================
+
+   +-------------------------------------+
+   | run(graph, x)  -- admitted graph    |
+   | graph.wings, graph.wiring           |
+   +-------------+-----------------------+
+                 |
+                 v
+   +-------------------------------------+
+   | schedule:                           |
+   | independent branches PARALLEL       |
+   | sequential chains in order          |
+   +-------------+-----------------------+
+                 |
+        +--------+---------+
+        |        |         |
+        v        v         v
+   +--------+ +--------+ +--------+
+   | WING A | | WING B | | WING C |   each records:
+   +---+----+ +---+----+ +---+----+   T_load, T_transfer,
+       |         |         |          T_wing
+       +---------+---------+
+                 |
+                 v
+   +-------------------------------------+
+   | fuse (bridge / task head)  T_fusion |
+   +-------------------------------------+
+                 |
+                 v
+   +-------------------------------------+
+   | binding-level risk test  T_risk     |
+   | (see 06_risk_expand.txt)            |
+   +-------------------------------------+
+                 |
+        +--------+---------+
+        |                  |
+        v                  v
+   +-----------+      +-----------+
+   | OUTPUT    |      | TRACE     |  <- EVERY path emits a trace,
+   +-----------+      +-----------+     success or failure
+          |
+          +-- Trace fields: input_hash, epoch, graph_id,
+              binding_id, calibration_class, wing_versions,
+              admission, latency{8 terms}, active_flops,
+              peak_memory, evidence, conflicts, decision,
+              replay_level, failures, shadow
+
+Physics: the 8 latency terms must sum to wall clock within tolerance.
+A missing term is a bug; a swallowed failure recorded nowhere is worse
+than a crash. A wing failing mid-graph is isolated and recorded, and the
+graph continues without it if evidence allows - else ABSTAIN.

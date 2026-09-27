@@ -1,0 +1,52 @@
+Risk control and the abstain default
+====================================
+
+   +-------------------------------------+
+   | fused output of graph S under       |
+   | binding B                            |
+   +-------------------+-----------------+
+                       |
+                       v
+   +-------------------------------------+
+   | binding risk test (conformal /      |
+   | selective classification)           |
+   | compare score to calibrated         |
+   | threshold with HYSTERESIS + margin  |
+   +---+--------------+-----------------+
+       |              |
+       | met          | not met
+       v              v
+   +-----------+  +--------------------+
+   |  ACCEPT   |  | conflict above     |
+   +-----------+  | action threshold?  |
+                  +---+------------+---+
+                      |            |
+                 yes  |            | no
+                      v            v
+   +--------------------+   +-----------------+
+   | ABSTAIN + escalate |   | adaptive budget |
+   +--------------------+   | remains?        |
+                            +---+---------+---+
+                                |         |
+                            yes |         | no
+                                v         v
+                     +-----------+     +-----------+
+                     | EXPAND    |     | ABSTAIN   |
+                     +-----+-----+     +-----------+
+                           |
+                           v
+              +------------------------------+
+              | return to ADMISSION (04),    |
+              | NOT to execution: a grown    |
+              | graph is a new binding       |
+              +------------------------------+
+
+Other abort paths (any of these -> ABSTAIN):
+   - no admissible graph
+   - wing failure with no fallback
+   - budget exhausted mid-plan
+   - conflicting evidence above threshold
+
+NEVER: resolve an unresolved state by picking the higher score.
+Abstention is counted, capped per task family; abstaining your way to
+good numbers is a failure mode of the whole system.

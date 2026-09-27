@@ -1,0 +1,54 @@
+Manifest load and validate (S1, registry)
+=========================================
+
+      +----------------------+
+      |    manifest.yaml     |
+      |  (vendor supplied)   |
+      +----------+-----------+
+                 |
+                 v
+      +----------------------+
+      | strict YAML parse    |
+      +----------+-----------+
+                 |
+                 v
+      +----------------------+
+      | allow-list check     |
+      | can every key map    |
+      | into abi.Manifest?   |
+      +---+--------------+---+
+          |              |
+     yes  |              | no (includes host-owned
+          |              |     field names)
+          v              v
+   +----------------+  +----------------------+
+   | core epoch     |  | REJECT, clear error  |
+   | matches pinned |  | (e.g. reliability:)  |
+   | epoch?         |  +----------------------+
+   +---+--------+---+
+       |        |
+  yes  |        | no
+       v        v
+   +-------------------+
+   | artifact hash     |
+   | verifies against  |
+   | integrity field?  |
+   +---+-----------+---+
+       |           |
+  yes  |           | no -> REJECT (tampered artifact)
+       v
+   +-------------------+
+   | version resolve   |
+   | (single epoch,    |
+   |  no diamond)      |
+   +---+-----------+---+
+       |           |
+  ok   |           | diamond -> REJECT (hard-unsatisfiable)
+       v
+   +-------------------+
+   | install -> WingRef|
+   +-------------------+
+
+A manifest can never carry reliability/accuracy/latency/evidence-gain:
+the allow-list type has no field for them, so there is nothing to parse.
+HOST_OWNED_FIELDS only makes the error message readable.

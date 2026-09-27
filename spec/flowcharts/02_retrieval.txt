@@ -1,0 +1,39 @@
+Two-stage retrieval (paper 9.5)
+===============================
+
+   +-----------------------------------+
+   | INSTALLED REGISTRY (N wings)      |
+   +-------+---------------------------+
+           |
+           |  STAGE 1 (N -> m)
+           v
+   +-----------------------------------+
+   | 1 type unify against input x      |
+   | 2 core-epoch filter               |
+   | 3 dependency + security filter    |
+   | 4 embedding retrieval over tags   |
+   |   + host route statistics         |
+   +-------+---------------------------+
+           |
+           v
+   +-----------------------------------+
+   | CANDIDATES V_x (~m ~ 8-12)        |
+   +-------+---------------------------+
+           |
+           |  STAGE 2 (m -> S*)
+           v
+   +-----------------------------------+
+   | attach HOST-MEASURED attributes   |
+   | (HostMetrics: latency, memory,    |
+   |  reliability, utility features)   |
+   +-------+---------------------------+
+           |
+           v
+   +-----------------------------------+
+   | planner: modes A / B / C          |
+   | (see 03_plan.txt)                 |
+   +-----------------------------------+
+
+Cost physics: stage-1 cost scales with N; stage-2 cost scales with m
+(construction-enforced). The falsifiable question is whether stage-1
+RECALL survives growth in N (H5) - measured, plotted in S7.

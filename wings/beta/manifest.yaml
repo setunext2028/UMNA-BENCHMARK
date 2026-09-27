@@ -1,0 +1,23 @@
+wing:
+  name: beta
+  version: 1.0.0
+  core_epoch: 1.x
+  author: umna
+types:
+  inputs:
+  - Latent<Vec8>
+  outputs:
+  - Latent<Score>
+capabilities:
+- tabular-classifier-redundant
+dependencies:
+  required: []
+resource_ceilings:
+  max_memory_mb: 8
+  max_input_size: 10000
+integrity:
+  artifact_hash: 6c84eeeb633d8b3349e5175e9f86963b42e078b055a76f624e3def52f7046a97
+provenance:
+  training_dataset_ids:
+  - umna-s3-t_ab
+  training_code_commit: core-1.x-c7acf73f

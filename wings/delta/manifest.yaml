@@ -1,0 +1,23 @@
+wing:
+  name: delta
+  version: 1.0.0
+  core_epoch: 1.x
+  author: umna
+types:
+  inputs:
+  - Latent<Vec8>
+  outputs:
+  - Latent<Score>
+capabilities:
+- tabular-classifier-complementary
+dependencies:
+  required: []
+resource_ceilings:
+  max_memory_mb: 8
+  max_input_size: 10000
+integrity:
+  artifact_hash: 3c1d6d979c86d98663352a6d6335ffdee381313b88e77d7bad64df331a64f3fc
+provenance:
+  training_dataset_ids:
+  - umna-s3-t_cd
+  training_code_commit: core-1.x-c7acf73f

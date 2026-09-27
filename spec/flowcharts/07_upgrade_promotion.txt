@@ -1,0 +1,56 @@
+Upgrade / promotion pipeline (CCE)
+==================================
+
+   +---------------------------------------+
+   | candidate Wing v2.1 arrives            |
+   +---------------------------------------+
+                     |
+                     v
+   +---------------------------------------+
+   | S1 registry: validate manifest,       |
+   | hash, epoch pin. Install side-by-side |
+   | (live route keeps v2.0 pinned)        |
+   +---------------------------------------+
+                     |
+                     v
+   +---------------------------------------+
+   | shadow mode on fraction s of traffic  |
+   | (log counterfactuals, never serve)    |
+   +---------------------------------------+
+                     |
+                     v
+   +---------------------------------------+
+   | evaluation:                           |
+   |  step:   P(t) - P(t-1) >= -eps  AND  |
+   |  origin: P(t) - P(0)   >= -E         |
+   | (both must hold; origin never moves)  |
+   +------------+----------------+---------+
+                |                |
+           pass |                | fail
+                v                v
+   +------------------------+  +--------------------+
+   | promotion: bump route  |  | reject or keep     |
+   | to a graph using v2.1  |  | shadow / demote    |
+   +------------+-----------+  +--------------------+
+                |
+                v
+   +---------------------------------------+
+   | re-admit under calibration classes;   |
+   | if outside every class -> shadow-only |
+   +---------------------------------------+
+                |
+                v
+   +---------------------------------------+
+   | post-promotion interference matrix:   |
+   | I = P_i(after) - P_i(before) on      |
+   | routes that are ALLOWED to change     |
+   +---------------------------------------+
+
+Tier A power budget: |A|max computed from
+   power(delta, n, alpha/k) >= 1 - beta and PUBLISHED before the first
+   promotion. More Tier A capabilities than |A|max = underpowered tests.
+
+Safety interrupts: an interrupt (emergency, contraindication, conflict,
+security, legal) may append a guard / force abstain / block - it never
+silently replaces the protected route. Interrupt paths are calibrated
+bindings like any other.

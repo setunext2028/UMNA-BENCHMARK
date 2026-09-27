@@ -1,0 +1,42 @@
+Calibration-class admission (the gate)
+======================================
+
+            +----------------------------+
+            | S* planned graph (from 03)  |
+            | binding B = (epoch, G, H,   |
+            |             D, Q)           |
+            +-------------+---------------+
+                          |
+                          v
+            +----------------------------+
+            | any registered class Phi   |
+            | contains S*, with a        |
+            | VALID calibrator?          |
+            +-----+-----------------+----+
+                  |                 |
+              yes |                 | no
+                  v                 v
+   +---------------------+   +----------------------+
+   | ADMISSION:          |   | ADMISSION:           |
+   | PRODUCTION          |   | SHADOW_ONLY          |
+   +----------+----------+   +----------+-----------+
+              |                       |
+              v                       v
+   +---------------------+   +----------------------+
+   | may serve           |   | execute for data +   |
+   +---------------------+   | log; NEVER serve     |
+                              | fall back to nearest|
+                              | admissible graph,   |
+                              | or ABSTAIN if none  |
+                              +----------+----------+
+                                         |
+                                         v
+                              +----------------------+
+                              | log inadmissible      |
+                              | proposal: evidence   |
+                              | toward a new class   |
+                              +----------------------+
+
+THE INVARIANT: plan -> admit -> execute. Never plan -> execute.
+Expansion also returns HERE: a grown graph is a different binding.
+Inline admit into plan and the gate is gone.

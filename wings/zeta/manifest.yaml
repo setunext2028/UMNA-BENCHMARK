@@ -1,0 +1,23 @@
+wing:
+  name: zeta
+  version: 1.0.0
+  core_epoch: 1.x
+  author: umna
+types:
+  inputs:
+  - Latent<Vec8>
+  outputs:
+  - Latent<Score>
+capabilities:
+- tabular-classifier-cheap-weak
+dependencies:
+  required: []
+resource_ceilings:
+  max_memory_mb: 8
+  max_input_size: 10000
+integrity:
+  artifact_hash: de200192ff3f89d6d9a6579801ff6b91e199e4ada5a47e2a1f04fea6f9e39763
+provenance:
+  training_dataset_ids:
+  - umna-s3-t_z
+  training_code_commit: core-1.x-c7acf73f

@@ -1,0 +1,41 @@
+Planner: the three modes (S5)
+=============================
+
+                +----------------------------+
+                | candidates V_x, Budgets    |
+                | B_C B_L B_M, input x       |
+                +------+----------+----------+
+                       |          |          |
+        MODE A         | MODE B   | MODE C
+        greedy         | pairs    | beam
+                       v          v          v
+   +----------------+ +--------------------+ +----------------------+
+   | start empty S  | | score all singles  | | beam = {empty graph} |
+   | repeat:        | | propose <= K_pair  | | repeat:              |
+   |  add argmax    | | pairs from inter-  | |  expand every state  |
+   |  Delta U_i(S)  | | action model       | |  by legal continua-  |
+   |  until budget  | | (incl. uncertain-  | |  tion                |
+   |  binds or no   | |  exploration frac.)| |  score, keep b best  |
+   |  gain          | | keep best of       | |  budgets prune       |
+   +-------+--------+ | singles + pairs    | +----------+-----------+
+           |          +----------+---------+            |
+           |                     |                      |
+           +----------+----------+----------------------+
+                      |
+                      v
+   +----------------------------------------------+
+   | S* = argmax [U_hat(S,x) - lambda*Gamma(S)]  |
+   | s.t. C<=B_C, L<=B_L, M<=B_M   (lambda = 0   |
+   | default: budgets are the only cost terms)    |
+   +----------------------------------------------+
+                      |
+                      v
+   +----------------------------------------------+
+   | S* is NOT yet admissible - it goes to        |
+   | admission next (04_admit.txt). plan never    |
+   | executes and never reads a manifest.         |
+   +----------------------------------------------+
+
+Restricted oracle (measuring arm, not deployable):
+   enumerate subsets of size <= 3 under fixed fusion topology,
+   evaluate all, take best. Regret reported against THIS restriction.

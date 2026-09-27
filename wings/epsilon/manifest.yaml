@@ -1,0 +1,23 @@
+wing:
+  name: epsilon
+  version: 1.0.0
+  core_epoch: 1.x
+  author: umna
+types:
+  inputs:
+  - Latent<Vec8>
+  outputs:
+  - Latent<Score>
+capabilities:
+- tabular-classifier-misleading
+dependencies:
+  required: []
+resource_ceilings:
+  max_memory_mb: 8
+  max_input_size: 10000
+integrity:
+  artifact_hash: 5807f4de50a71c4c80fd7f264f738b281eaf65e0e966bb6d166c879de3ea0567
+provenance:
+  training_dataset_ids:
+  - umna-s3-t_m
+  training_code_commit: core-1.x-c7acf73f

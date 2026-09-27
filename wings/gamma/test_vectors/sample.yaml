@@ -1,0 +1,2 @@
+input: "claim: the sky is blue"
+expected_output: 0.0

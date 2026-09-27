@@ -1,0 +1,23 @@
+wing:
+  name: gamma
+  version: 1.0.0
+  core_epoch: 1.x
+  author: umna
+types:
+  inputs:
+  - Latent<Vec8>
+  outputs:
+  - Latent<Score>
+capabilities:
+- tabular-classifier-complementary
+dependencies:
+  required: []
+resource_ceilings:
+  max_memory_mb: 8
+  max_input_size: 10000
+integrity:
+  artifact_hash: 4d929507be6e5ea65457265e5c6158b0263c771a32a3d7b42063a8f469bae1e9
+provenance:
+  training_dataset_ids:
+  - umna-s3-t_cd
+  training_code_commit: core-1.x-c7acf73f
